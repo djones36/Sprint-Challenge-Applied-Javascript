@@ -34,7 +34,7 @@ The dom is an object based representation of the HTML document source code. It h
 
 2. What is an event?
 
-
+An event is a function that triggers when the user interacts with something on the website,such as clicking or dragging or hovering the mouse over a button.
 
 3. What is an event listener?
 
