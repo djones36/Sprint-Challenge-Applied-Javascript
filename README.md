@@ -46,6 +46,7 @@ We would convert a NodeList into an array so we can make use of array methods, s
 
 5. What is a component?
 
+A component is generic common code that can be reused throughout a website when constructing the framework. This can save time and resources. 
 
 
 ### Git Set up
