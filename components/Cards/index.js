@@ -17,58 +17,47 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
+.then((success) => {
+    console.log('Article ',success);
+    Object.values(success.data.articles).forEach((item) => {
+        item.forEach((item) => {
+            let cardContainer = document.querySelector(".cards-container");
+            cardContainer.appendChild(articleCreator(item));
+        })
+    }) 
+})
 
-axios.get('https://lambda-times-backend.herokuapp.com/articles')
-  .then(data => {
-    console.log('Article' ,data);
-    const articles = data.data.articles
-    const cards = document.querySelector('.cards- container')
+.catch(fail => {
+    console.log('Article ', fail);
+})
+//creator function
+function articleCreator(axiosData){
+    //create elements
+    let cardDiv = document.createElement("div");
+    let headlineDiv = document.createElement("div");
+    let authorDiv = document.createElement("div");
+    let imgDiv = document.createElement("div");
+    let img = document.createElement("img");
+    let span = document.createElement("span");
 
-    articles.bootstrap.forEach(card => {
-        cards.appendChild(articleCreator(card.headline, card.authorPhoto, card.authorName));
-    })
+    //define classes
+    cardDiv.classList.add("card");
+    headlineDiv.classList.add("headline");
+    authorDiv.classList.add("author");
+    imgDiv.classList.add("img-container");
 
-    // articles.javascript.forEach(article => {
-    //    cardsContainer.appendChild(articleCreator(card.headline, card.authorPhoto, card.authorName));
-    // })
+    //add content
+    headlineDiv.textContent = axiosData.headline;
+    img.src = axiosData.authorPhoto;
+    span.textContent = axiosData.authorName;
 
-    // articles.jquery.forEach(article => {
-    //     cardsContainer.appendChild(articleCreator(card.headline, card.authorPhoto, card.authorName));
-    // })
+    //append content to div
+    imgDiv.appendChild(img);
+    authorDiv.appendChild(imgDiv);
+    authorDiv.appendChild(span);
+    headlineDiv.appendChild(authorDiv);
+    cardDiv.appendChild(headlineDiv);
 
-    // articles.technology.forEach(article => {
-    //     cardsContainer.appendChild(articleCreator(card.headline, card.authorPhoto, card.authorName));
-    // })
-  })
-  .catch(fail => {
-      console.log('Article ', fail);
-  })
-
-  function articleCreator(axiosData){
-      let cardDiv = document.createElement('div');
-      let headlineDiv = document.createElement('div');
-      let authorDiv = document.createElement('div');
-      let imgDiv = document.createElement('div');
-      let img = document.createElement('img');
-      let span = document.createElement('span');
-
-      //class
-      cardDiv.classList.add('card');
-      headlineDiv.classList.add('headline');
-      authorDiv.classList.add('author');
-      imgDiv.classList.add('img-container');
-
-      //Set content
-      headlineDiv.textContent = axiosData.headline;
-      img.src = axiosData.authorPhoto;
-      span.textcontent = `By ${axiosData.authorName}`;
-
-      //structure of elements
-      cardDiv.appendChild(headlineDiv);
-      cardDiv.appendChild(authorDiv);
-      authorDiv.appendChild(imgDiv);
-      imgDiv.appendChild(img);
-      authorDiv.appendChild(span);
-    
-      return cardDiv;
-  }
+    return cardDiv;
+} 
