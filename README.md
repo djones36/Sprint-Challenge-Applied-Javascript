@@ -42,7 +42,11 @@ An event listener is the line of code that applies and sets up a method on a dom
 
 4. Why would we convert a NodeList into an Array?
 
+We would convert a NodeList into an array so we can make use of array methods, such as forEach and .map. 
+
 5. What is a component?
+
+
 
 ### Git Set up
 
