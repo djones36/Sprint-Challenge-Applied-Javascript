@@ -26,5 +26,10 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
   })
 
   function articleCreator(){
-      
+      let cardDiv = document.createElement('div');
+      let headlineDiv = document.createElement('div');
+      let authorDiv = document.createElement('div');
+      let imgDiv = document.createElement('div');
+      let img = document.createElement('img');
+      let span = document.createElement('span');
   }
