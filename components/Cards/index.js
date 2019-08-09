@@ -19,13 +19,13 @@
 // Create a card for each of the articles and add the card to the DOM.
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
-  .then(success => {
-    console.log('Article' ,success);
-    const articles = success.data.articles
-    const cardsContainer = document.querySelector('.cards- container')
+  .then(data => {
+    console.log('Article' ,data);
+    const articles = data.data.articles
+    const cards = document.querySelector('.cards- container')
 
     articles.bootstrap.forEach(card => {
-        cardsContainer.appendChild(articleCreator(card.headline, card.authorPhoto, card.authorName));
+        cards.appendChild(articleCreator(card.headline, card.authorPhoto, card.authorName));
     })
 
     // articles.javascript.forEach(article => {
@@ -44,7 +44,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
       console.log('Article ', fail);
   })
 
-  function articleCreator(cardheadline, authorImg, author){
+  function articleCreator(axiosData){
       let cardDiv = document.createElement('div');
       let headlineDiv = document.createElement('div');
       let authorDiv = document.createElement('div');
@@ -59,9 +59,9 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
       imgDiv.classList.add('img-container');
 
       //Set content
-      headlineDiv.textContent = cardheadline;
-      img.src = authorImg;
-      span.textcontent = `By ${author}`;
+      headlineDiv.textContent = axiosData.headline;
+      img.src = axiosData.authorPhoto;
+      span.textcontent = `By ${axiosData.authorName}`;
 
       //structure of elements
       cardDiv.appendChild(headlineDiv);
