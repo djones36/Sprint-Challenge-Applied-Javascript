@@ -32,4 +32,11 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
       let imgDiv = document.createElement('div');
       let img = document.createElement('img');
       let span = document.createElement('span');
+
+      //class
+      cardDiv.classList.add('card');
+      headlineDiv.classList.add('headline');
+      authorDiv.classList.add('author');
+      imgDiv.classList.add('img-container');
+
   }
