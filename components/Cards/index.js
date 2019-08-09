@@ -43,6 +43,13 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
       headlineDiv.textContent = ;
       img.src = ;
       span.textcontent = ;
-      //structure of elements
 
+      //structure of elements
+      cardDiv.appendChild(headlineDiv);
+      cardDiv.appendChild(authorDiv);
+      author.appendChild(imgDiv);
+      imgDiv.appendChild(img);
+      author.appendChild(span);
+    
+      return cardDiv;
   }
