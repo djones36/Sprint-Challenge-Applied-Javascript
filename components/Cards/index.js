@@ -24,3 +24,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
   .catch(fail => {
       console.log('Article ', fail);
   })
+
+  function articleCreator(){
+      
+  }
