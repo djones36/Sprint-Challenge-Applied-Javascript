@@ -39,4 +39,10 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
       authorDiv.classList.add('author');
       imgDiv.classList.add('img-container');
 
+      //Set content
+      headlineDiv.textContent = ;
+      img.src = ;
+      span.textcontent = ;
+      //structure of elements
+
   }
