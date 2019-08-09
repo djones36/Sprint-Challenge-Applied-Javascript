@@ -30,6 +30,8 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+The dom is an object based representation of the HTML document source code. It has parent and child relationships with the html elements. 
+
 2. What is an event?
 
 3. What is an event listener?
