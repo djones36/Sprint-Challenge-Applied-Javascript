@@ -42,9 +42,9 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
       imgDiv.classList.add('img-container');
 
       //Set content
-    //   headlineDiv.textContent = ;
-    //   img.src = ;
-    //   span.textcontent = ;
+      headlineDiv.textContent = objData.headline;
+      img.src = `${objData.authorPhoto}`;
+      span.textcontent = `By ${objData.authorName}`;
 
       //structure of elements
       cardDiv.appendChild(headlineDiv);
