@@ -38,6 +38,8 @@ An event is a function that triggers when the user interacts with something on t
 
 3. What is an event listener?
 
+An event listener is the line of code that applies and sets up a method on a dom element. It waits for the parameter to be fullfiled such as click or drag before it triggers the corresponding function.
+
 4. Why would we convert a NodeList into an Array?
 
 5. What is a component?
