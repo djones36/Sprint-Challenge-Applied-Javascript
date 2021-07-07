@@ -30,13 +30,24 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+The dom is an object based representation of the HTML document source code. It has parent and child relationships with the html elements. The Dom allows for manipulation of the html by use of javascript.
+
 2. What is an event?
+
+An event is a function that triggers when the user interacts with something on the website,such as clicking or dragging or hovering the mouse over a button.
 
 3. What is an event listener?
 
+An event listener is the line of code that applies and sets up a method on a dom element. It waits for the parameter to be fullfiled such as click or drag before it triggers the corresponding function.
+
 4. Why would we convert a NodeList into an Array?
 
+We would convert a NodeList into an array so we can make use of array methods, such as forEach and .map. 
+
 5. What is a component?
+
+A component is generic common code that can be reused throughout a website when constructing the framework. This can save time and resources. 
+
 
 ### Git Set up
 
@@ -49,11 +60,11 @@ Edit this document to include your answers after each question. Make sure to lea
 
 Your finished project must include all of the following requirements:
 
-* [ ] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the HTML file itself.
+* [x ] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the HTML file itself.
 
-* [ ] Following the instructions in the `Header/index.js` file, create the Header component. 
+* [ x] Following the instructions in the `Header/index.js` file, create the Header component. 
 
-* [ ] Following the instructions in the `Tabs/index.js` file, create individual Tabs components.
+* [ x] Following the instructions in the `Tabs/index.js` file, create individual Tabs components.
 
 * [ ] Following the instructions in the `Cards/index.js` file, create individual Cards components.
 
